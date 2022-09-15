@@ -8,7 +8,10 @@ public class PlayerCollision : MonoBehaviour
     {
         if (collision.collider.CompareTag("Obstacle"))
         {
-            movement.enabled = false; // added the PlyerMOvement script to movement in unity, now if it hits an obtsacle it stops
+            movement.enabled = false; // added the PlyerMovement script to movement in unity, now if it hits an obtsacle it stops
+
+            FindObjectOfType<GameManager>().EndGame();
+
         }
     }
 }
